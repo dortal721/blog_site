@@ -1,0 +1,42 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block css_files%} 
+    <link rel="stylesheet" href="{% static "blog/single_post.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
+
+{% block title %} 
+    My Posts
+{%endblock%} 
+
+{% block content %}  
+    <section id="welcome"> 
+        <header>
+            <img src="{% static "blog/images/Dor.jpg" %}" alt="Dor - Author Of This Blog" /> 
+            <h2>Dor's Blog</h2> 
+        </header> 
+        <p>Hi, I am Dor and i love building independent projects and exploring new technologies!</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest thoughts</h2> 
+
+        <ul>
+            {%for blog_data in latest_posts%} 
+                {% include "blog/includes/single_post.html" %}
+            {% endfor %}
+        </ul>
+    </section> 
+
+    <section id="about">
+        <h2>About Me</h2> 
+        <p>
+            I love programming and solving technical challenges in general. Continuously striving for improving my code by experimenting with the most cutting edge technologies.
+        </p> 
+
+        <p>
+            My goal is to keep growing as a developer by taking on new challenges!
+        </p>
+    </section>
+{% endblock %}
