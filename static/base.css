@@ -45,4 +45,8 @@ h3 {
 #main-navigation h1 a:hover,
 #main-navigation h1 a:active {
   color: white;
+} 
+
+#main-navigation #secondary-nav a {
+  margin: 0.5rem
 }

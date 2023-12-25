@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block title %}
+    Saved Posts
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/single_post.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/all-posts.css" %}" />
+{% endblock %}
+
+{% block content %}
+    <section id="all-posts"> 
+        {% if posts is None %}
+            <h2>You still don't have any posts saved...</h2>
+        {% else %} 
+            <h2>Your Saved Posts</h2>
+        {% endif %} 
+        <ul>
+            {% for blog_data in posts %}
+                {% include "blog/includes/single_post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
+
