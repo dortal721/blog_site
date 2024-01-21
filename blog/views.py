@@ -45,7 +45,7 @@ class SinglePostView(View):
                        'is_saved': is_post_saved(request, cur_post)})
     
     def post(self, request, slug):
-        comment_form = CommentForm(request.POST) 
+        comment_form = CommentForm(request.POST)
         cur_post = Post.objects.get(slug=slug)
 
         if comment_form.is_valid(): 
@@ -57,8 +57,9 @@ class SinglePostView(View):
             cur_comment.save()
 
             # redirecting a GET request to the original page 
-            return HttpResponseRedirect(reverse("single_post", args=[slug]))
-
+            return HttpResponseRedirect(reverse("single_post", args=[slug])) 
+        
+        # TODO: add is_saved to dictionary, and unify to use less code
         return render(request, 'blog/post-detail.html', 
                           {'blog_data': cur_post, 
                            'comment_form': comment_form, 
@@ -82,7 +83,7 @@ class ReadLaterView(View):
         cur_post_obj = Post.objects.get(id=cur_post_id)
 
         # redirecting a GET request to post page
-        return HttpResponseRedirect(reverse('single_post', args=[cur_post_obj.slug])) 
+        return HttpResponseRedirect(reverse('single_post', args=[cur_post_obj.slug]))
     
 
 class SavedPostsView(View):
