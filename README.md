@@ -1,6 +1,6 @@
 ## Blog Site WebApp Overview ##
 
-Welcome to the repository dedicated to the backend implementation of my sophisticated blog site using the powerful Python Django framework. 
+Welcome to the repository dedicated to the backend implementation of my blog site using the powerful Python Django framework. 
 
 ![image](https://github.com/dortal721/blog_site/assets/129318571/90129dbb-b863-4edd-a14b-f19d7403870e)
 
